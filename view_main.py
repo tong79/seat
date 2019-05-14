@@ -64,6 +64,9 @@ class SearchView(object):
         seat1 = u"{} {} 座位1".format(self.searchValue[4], self.searchValue[5])
         # print u"{} {} 座位1".format(self.searchValue[4],self.searchValue[5])
         num = seat_d[seat1]  # 输入查询的座位
+        print fileName_course
+        print num
+        print time1
         ava, distance = SeatFree.read_course(fileName_course, num, time1)
 
         if ava == 0:
@@ -74,13 +77,21 @@ class SearchView(object):
             self.statuLabel1.place(x=50, y=100)
             self.statuLabel1Var.set(u"座位1处于占用状态。")
         else:
-            print seat1 + u"处于空闲状态，空闲时间为" + str(distance) + u"分钟。"
-            self.statuLabel1Var = StringVar()
-            self.statuLabel1 = Label(self.frameLabel, textvariable=self.statuLabel1Var, width=20, height=5,
-                                     bg=self.labelColor1)
-            self.statuLabel1.place(x=50, y=100)
-            self.statuLabel1Var.set(u"座位1处于空闲状态\n"
-                                    u"空闲时间为" + str(distance) + u"分钟。")
+            if ava == 1:
+                print seat1 + u"处于空闲状态，空闲时间为" + str(distance) + u"分钟。"
+                self.statuLabel1Var = StringVar()
+                self.statuLabel1 = Label(self.frameLabel, textvariable=self.statuLabel1Var, width=20, height=5,
+                                         bg=self.labelColor1)
+                self.statuLabel1.place(x=50, y=100)
+                self.statuLabel1Var.set(u"座位1处于空闲状态\n"
+                                        u"空闲时间为" + str(distance) + u"分钟。")
+            if ava == 2:
+                print seat1 + u"处于未占用状态"
+                self.statuLabel1Var = StringVar()
+                self.statuLabel1 = Label(self.frameLabel, textvariable=self.statuLabel1Var, width=20, height=5,
+                                         bg=self.labelColor1)
+                self.statuLabel1.place(x=50, y=100)
+                self.statuLabel1Var.set(u"座位1处于未分配状态")
         seat2 = u"{} {} 座位2".format(self.searchValue[4], self.searchValue[5])
         num = seat_d[seat2]  # 输入查询的座位
         ava, distance = SeatFree.read_course(fileName_course, num, time1)
@@ -93,13 +104,22 @@ class SearchView(object):
             self.statuLabel2Var.set(u"座位2处于占用状态。")
             # self.statuLabel2Color = self.labelColor3
         else:
-            self.statuLabel2Var = StringVar()
-            self.statuLabel2 = Label(self.frameLabel, textvariable=self.statuLabel2Var, width=20, height=5,
-                                     bg=self.labelColor1)
-            self.statuLabel2.place(x=400, y=100)
-            print seat2 + u"处于空闲状态，空闲时间为" + str(distance) + u"分钟。"
-            self.statuLabel2Var.set(u"座位2处于空闲状态\n"
-                                    u"空闲时间为" + str(distance) + u"分钟。")
+            if ava == 1:
+                self.statuLabel2Var = StringVar()
+                self.statuLabel2 = Label(self.frameLabel, textvariable=self.statuLabel2Var, width=20, height=5,
+                                         bg=self.labelColor1)
+                self.statuLabel2.place(x=400, y=100)
+                print seat2 + u"处于空闲状态，空闲时间为" + str(distance) + u"分钟。"
+                self.statuLabel2Var.set(u"座位2处于空闲状态\n"
+                                        u"空闲时间为" + str(distance) + u"分钟。")
+            if ava == 2:
+                self.statuLabel2Var = StringVar()
+                self.statuLabel2 = Label(self.frameLabel, textvariable=self.statuLabel2Var, width=20, height=5,
+                                         bg=self.labelColor1)
+                self.statuLabel2.place(x=400, y=100)
+                print seat2 + u"处于未分配状态"
+                self.statuLabel2Var.set(u"座位2处于未分配状态")
+
             # self.statuLabel2Color = self.labelColor1
 
         seat3 = u"{} {} 座位3".format(self.searchValue[4], self.searchValue[5])
@@ -114,13 +134,22 @@ class SearchView(object):
             self.statuLabel3Var.set(u"座位3处于占用状态。")
             self.statuLabel3Color = self.labelColor3
         else:
-            self.statuLabel3Var = StringVar()
-            self.statuLabel3 = Label(self.frameLabel, textvariable=self.statuLabel3Var, width=20, height=5,
-                                     bg=self.labelColor1)
-            self.statuLabel3.place(x=50, y=300)
-            print seat3 + u"处于空闲状态，空闲时间为" + str(distance) + u"分钟。"
-            self.statuLabel3Var.set(u"座位3处于空闲状态\n"
-                                    u"空闲时间为" + str(distance) + u"分钟。")
+            if ava == 1:
+                self.statuLabel3Var = StringVar()
+                self.statuLabel3 = Label(self.frameLabel, textvariable=self.statuLabel3Var, width=20, height=5,
+                                         bg=self.labelColor1)
+                self.statuLabel3.place(x=50, y=300)
+                print seat3 + u"处于空闲状态，空闲时间为" + str(distance) + u"分钟。"
+                self.statuLabel3Var.set(u"座位3处于空闲状态\n"
+                                        u"空闲时间为" + str(distance) + u"分钟。")
+            if ava == 2:
+                self.statuLabel3Var = StringVar()
+                self.statuLabel3 = Label(self.frameLabel, textvariable=self.statuLabel3Var, width=20, height=5,
+                                         bg=self.labelColor1)
+                self.statuLabel3.place(x=50, y=300)
+                print seat3 + u"处于未分配状态"
+                self.statuLabel3Var.set(u"座位3处于未分配状态")
+
 
         seat4 = u"{} {} 座位4".format(self.searchValue[4], self.searchValue[5])
         num = seat_d[seat4]  # 输入查询的座位
@@ -135,16 +164,27 @@ class SearchView(object):
             # self.statu#Label4Color = self.labelColor3
             print seat4 + u"处于占用状态。"
         else:
-            self.statuLabel4Var = StringVar()
-            # self.statuLabel4Color = self.labelColor1
-            self.statuLabel4 = Label(self.frameLabel, textvariable=self.statuLabel4Var, width=20, height=5,
-                                     bg=self.labelColor1)
-            self.statuLabel4.place(x=400, y=300)
+            if ava == 1:
+                self.statuLabel4Var = StringVar()
+                # self.statuLabel4Color = self.labelColor1
+                self.statuLabel4 = Label(self.frameLabel, textvariable=self.statuLabel4Var, width=20, height=5,
+                                         bg=self.labelColor1)
+                self.statuLabel4.place(x=400, y=300)
 
-            self.statuLabel4Var.set(u"座位4处于空闲状态\n"
-                                    u"空闲时间为" + str(distance) + u"分钟。")
+                self.statuLabel4Var.set(u"座位4处于空闲状态\n"
+                                        u"空闲时间为" + str(distance) + u"分钟。")
 
-            print seat4 + u"处于空闲状态空闲时间为" + str(distance) + u"分钟。"
+                print seat4 + u"处于空闲状态空闲时间为" + str(distance) + u"分钟。"
+            if ava == 2:
+                self.statuLabel4Var = StringVar()
+                # self.statuLabel4Color = self.labelColor1
+                self.statuLabel4 = Label(self.frameLabel, textvariable=self.statuLabel4Var, width=20, height=5,
+                                         bg=self.labelColor1)
+                self.statuLabel4.place(x=400, y=300)
+
+                self.statuLabel4Var.set(u"座位4处于未分配状态")
+
+                print seat4 + u"处于未分配状态"
         self.statuLabel5Var = StringVar()
         self.statuLabel5 = Label(self.frameLabel, textvariable=self.statuLabel5Var, width=22, height=2, bg='white',
                                  font=30)
