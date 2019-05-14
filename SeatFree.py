@@ -2,6 +2,7 @@
 import pandas as pd
 import datetime
 import time
+import json
 
 
 class Student(object):
@@ -21,6 +22,8 @@ def read_seat(fileName):
     df = pd.DataFrame(df)
     for index, row in df.iterrows():
         temp.append((row[0], row[1]))
+    # for i in temp:
+    #    print json.dumps(i, encoding='gbk', ensure_ascii=False)
     seat_dic = dict(temp)
     return seat_dic
 
@@ -95,6 +98,8 @@ def Caltime(date1, date2):
 
 
 def read_course(fileName, num, time):
+    if num == u"空":
+        return 2, 0
     week = get_week(time)  # 输入日期是周几
     if week > 5:
         return 0, 0
@@ -179,11 +184,15 @@ if __name__ == '__main__':
 
     # 加一个不合法时间判断，时间限定在，2018-9-3 00:00:00到2019-2-1 23:59:59；同时判断输入格式
     seat_d = read_seat(fileName_seat)
-    seat = u"一层 图书空间 A 座位1"
+    seat = u"八层 图书空间 H 座位1"
     # seat = u"七层 图书空间 D"
     num = seat_d[seat]   # 输入查询的座位
+
     ava, distance = read_course(fileName_course, num, time1)
     if ava == 0:
         print seat + u"处于占用状态。"
     else:
-        print seat + u"处于空闲状态，空闲时间为" + str(distance) + u"分钟。"
+        if ava == 1:
+            print seat + u"处于空闲状态，空闲时间为" + str(distance) + u"分钟。"
+        if ava == 2:
+            print seat + u"处于未占用状态"
