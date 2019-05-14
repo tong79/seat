@@ -14,7 +14,7 @@ class SearchView(object):
     statuLabel3Color = 'brown'
     statuLabel4Color = 'brown'
     labelColor1 = 'green'
-    labelColor2 = 'blue'
+    labelColor2 = 'gray'
     labelColor3 = 'orange'
     selectYear = 2018
     selectMonth = 1
@@ -89,7 +89,7 @@ class SearchView(object):
                 print seat1 + u"处于未占用状态"
                 self.statuLabel1Var = StringVar()
                 self.statuLabel1 = Label(self.frameLabel, textvariable=self.statuLabel1Var, width=20, height=5,
-                                         bg=self.labelColor1)
+                                         bg=self.labelColor2)
                 self.statuLabel1.place(x=50, y=100)
                 self.statuLabel1Var.set(u"座位1处于未分配状态")
         seat2 = u"{} {} 座位2".format(self.searchValue[4], self.searchValue[5])
@@ -115,7 +115,7 @@ class SearchView(object):
             if ava == 2:
                 self.statuLabel2Var = StringVar()
                 self.statuLabel2 = Label(self.frameLabel, textvariable=self.statuLabel2Var, width=20, height=5,
-                                         bg=self.labelColor1)
+                                         bg=self.labelColor2)
                 self.statuLabel2.place(x=400, y=100)
                 print seat2 + u"处于未分配状态"
                 self.statuLabel2Var.set(u"座位2处于未分配状态")
@@ -145,7 +145,7 @@ class SearchView(object):
             if ava == 2:
                 self.statuLabel3Var = StringVar()
                 self.statuLabel3 = Label(self.frameLabel, textvariable=self.statuLabel3Var, width=20, height=5,
-                                         bg=self.labelColor1)
+                                         bg=self.labelColor2)
                 self.statuLabel3.place(x=50, y=300)
                 print seat3 + u"处于未分配状态"
                 self.statuLabel3Var.set(u"座位3处于未分配状态")
@@ -179,7 +179,7 @@ class SearchView(object):
                 self.statuLabel4Var = StringVar()
                 # self.statuLabel4Color = self.labelColor1
                 self.statuLabel4 = Label(self.frameLabel, textvariable=self.statuLabel4Var, width=20, height=5,
-                                         bg=self.labelColor1)
+                                         bg=self.labelColor2)
                 self.statuLabel4.place(x=400, y=300)
 
                 self.statuLabel4Var.set(u"座位4处于未分配状态")
