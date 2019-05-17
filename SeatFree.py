@@ -85,7 +85,7 @@ def get_week_n(t):
     n = int(n[0])
     return n / 7 + 1
 
-
+# 计算时间差
 def Caltime(date1, date2):
 
     date1 = time.strptime(date1, "%Y-%m-%d")
@@ -96,7 +96,7 @@ def Caltime(date1, date2):
 
     return date2-date1
 
-
+# 读入时间
 def read_course(fileName, num, time):
     if num == u"空":
         return 2, 0
@@ -169,6 +169,8 @@ def read_course(fileName, num, time):
             else:
                 return 0, 0
 
+
+# 时间差
 def time_cmp(t1, t2):
     d1 = datetime.datetime.strptime(t1, '%Y-%m-%d %H:%M:%S')
     d2 = datetime.datetime.strptime(t2, '%Y-%m-%d %H:%M:%S')
