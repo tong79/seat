@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《词的本义与引申义》教学设计 | 青教赛</title>
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --primary-light: #2c5282;
+            --primary-dark: #152a45;
+            --secondary: #8b4513;
+            --secondary-light: #a0522d;
+            --accent: #c53030;
+            --accent-light: #e53e3e;
+            --success: #276749;
+            --success-light: #38a169;
+            --bg-warm: #faf8f5;
+            --bg-card: #ffffff;
+            --bg-highlight: #fef3e2;
+            --text-main: #2d3748;
+            --text-light: #4a5568;
+            --text-muted: #718096;
+            --border: #e2e8f0;
+            --border-light: #edf2f7;
+            --shadow: rgba(30, 58, 95, 0.08);
+            --shadow-lg: rgba(30, 58, 95, 0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Noto Serif CJK SC", "SimSun", "Source Han Serif SC", "Microsoft YaHei", serif;
+            font-size: 11pt;
+            line-height: 1.8;
+            color: var(--text-main);
+            background: #e8e8e8;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 15px auto;
+            padding: 20mm 22mm 25mm 22mm;
+            background: var(--bg-card);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            page-break-after: always;
+        }
+        .page:last-child { page-break-after: auto; }
+        .top-bar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 50%, var(--secondary) 100%);
+        }
+        .page-header {
+            position: absolute;
+            top: 12mm; left: 22mm; right: 22mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+        .page-header-left { font-size: 9pt; color: var(--text-muted); }
+        .page-header-right { font-size: 9pt; color: var(--primary); font-weight: bold; }
+        .page-footer {
+            position: absolute;
+            bottom: 10mm; left: 22mm; right: 22mm;
+            text-align: center;
+            font-size: 10pt;
+            color: var(--text-muted);
+        }
+        .page-number {
+            display: inline-block;
+            width: 28px; height: 28px;
+            line-height: 28px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100%;
+            text-align: center;
+            padding-top: 30px;
+        }
+        .cover-badge {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 10px 32px;
+            border-radius: 25px;
+            font-size: 11pt;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+        .cover-title {
+            font-size: 32pt;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: 4px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        .cover-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 120px; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        .cover-subtitle {
+            font-size: 16pt;
+            color: var(--text-light);
+            margin-bottom: 45px;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        .cover-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 50px;
+            text-align: left;
+            margin: 35px 0;
+            font-size: 11pt;
+            background: var(--bg-warm);
+            padding: 25px 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+        .meta-item { display: flex; align-items: baseline; gap: 12px; }
+        .meta-label {
+            color: var(--primary);
+            font-weight: bold;
+            min-width: 85px;
+            font-size: 10.5pt;
+        }
+        .meta-value {
+            color: var(--text-main);
+            border-bottom: 1px dotted var(--border);
+            flex: 1;
+            padding-bottom: 2px;
+        }
+        .cover-image {
+            margin-top: 25px;
+            max-width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px var(--shadow);
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 20px 0 18px 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        .section-num {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            width: 40px; height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 16pt;
+            margin-right: 15px;
+            flex-shrink: 0;
+            box-shadow: 0 3px 10px var(--shadow);
+        }
+        .section-title {
+            font-size: 17pt;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        h3 {
+            font-size: 13pt;
+            color: var(--secondary);
+            margin: 22px 0 14px 0;
+            padding-left: 14px;
+            border-left: 4px solid var(--secondary-light);
+            font-weight: bold;
+        }
+        h4 {
+            font-size: 11.5pt;
+            color: var(--text-main);
+            margin: 18px 0 10px 0;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+            text-indent: 2em;
+        }
+        .no-indent { text-indent: 0; }
+        .card {
+            background: var(--bg-warm);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 18px 0;
+            border-left: 4px solid var(--primary-light);
+            box-shadow: 0 3px 12px var(--shadow);
+        }
+        .card-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11.5pt;
+        }
+        .card-icon { font-size: 16pt; }
+        .ideology-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 22px 0;
+        }
+        .ideology-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 3px 12px var(--shadow);
+        }
+        .ideology-card:nth-child(1) { border-top: 4px solid var(--primary); }
+        .ideology-card:nth-child(2) { border-top: 4px solid var(--success); }
+        .ideology-card:nth-child(3) { border-top: 4px solid var(--accent); }
+        .ideology-title {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .ideology-card:nth-child(1) .ideology-title { color: var(--primary); }
+        .ideology-card:nth-child(2) .ideology-title { color: var(--success); }
+        .ideology-card:nth-child(3) .ideology-title { color: var(--accent); }
+        .ideology-sub {
+            font-size: 9.5pt;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        .ideology-content {
+            font-size: 10pt;
+            line-height: 1.7;
+            color: var(--text-main);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 10.5pt;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px var(--shadow);
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 14px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .comparison-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            background: white;
+        }
+        .comparison-table tr:nth-child(even) td { background: var(--bg-warm); }
+        .problem-cell {
+            color: var(--accent);
+            font-weight: bold;
+            background: #fff5f5 !important;
+        }
+        .solution-cell {
+            color: var(--success);
+            font-weight: bold;
+            background: #f0fff4 !important;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border: 2px solid var(--secondary-light);
+            border-radius: 12px;
+            padding: 22px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+        .highlight-box::before {
+            content: "★";
+            position: absolute;
+            top: -14px; left: 22px;
+            background: var(--secondary);
+            color: white;
+            width: 30px; height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 14pt;
+            box-shadow: 0 3px 8px var(--shadow);
+        }
+        .highlight-title {
+            font-weight: bold;
+            color: var(--secondary);
+            font-size: 12.5pt;
+            margin-bottom: 14px;
+            padding-left: 12px;
+        }
+        .highlight-content { color: var(--text-main); }
+        .highlight-content ul {
+            margin: 0;
+            padding-left: 22px;
+        }
+        .highlight-content li { margin-bottom: 10px; line-height: 1.7; }
+        .strategy-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 2px solid #3b82f6;
+            border-radius: 12px;
+            padding: 22px;
+            margin: 20px 0;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+        }
+        .strategy-box::before {
+            content: "●";
+            position: absolute;
+            top: -14px; left: 22px;
+            background: #3b82f6;
+            color: white;
+            width: 30px; height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 11pt;
+            box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3);
+        }
+        .strategy-title {
+            font-weight: bold;
+            color: #1d4ed8;
+            font-size: 12.5pt;
+            margin-bottom: 14px;
+            padding-left: 12px;
+        }
+        .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 5px;
+            font-size: 9.5pt;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .tag-secondary { background: var(--success); }
+        .tag-accent { background: var(--accent); }
+        ul, ol { margin: 12px 0; padding-left: 2.2em; }
+        li { margin-bottom: 10px; line-height: 1.7; }
+        .figure {
+            margin: 22px auto;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+        .figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+        .figure-caption {
+            font-size: 9.5pt;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+            margin: 22px 0;
+        }
+        .resource-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 3px 12px var(--shadow);
+        }
+        .resource-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+            font-size: 11.5pt;
+        }
+        .resource-list { font-size: 10pt; line-height: 1.9; }
+        .resource-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .resource-bullet { color: var(--primary-light); font-weight: bold; }
+        .timeline-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 18px 0;
+            font-size: 10pt;
+        }
+        .timeline-table th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 14px;
+            text-align: left;
+            font-weight: bold;
+            border: none;
+        }
+        .timeline-table th:first-child {
+            border-radius: 10px 0 0 0;
+            width: 12%;
+        }
+        .timeline-table th:nth-child(2) { width: 10%; }
+        .timeline-table th:last-child {
+            border-radius: 0 10px 0 0;
+            width: 39%;
+        }
+        .timeline-table td {
+            border-bottom: 1px solid var(--border);
+            padding: 14px;
+            vertical-align: top;
+            background: white;
+        }
+        .timeline-table tr:nth-child(even) td { background: var(--bg-warm); }
+        .timeline-table tr:last-child td:first-child { border-radius: 0 0 0 10px; }
+        .timeline-table tr:last-child td:last-child { border-radius: 0 0 10px 0; }
+        .phase-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--success) 0%, var(--success-light) 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 9.5pt;
+        }
+        .eval-grid {
+            display: grid;
+            grid-template-columns: 80px 1fr 2fr 1fr 60px;
+            gap: 1px;
+            background: var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 18px 0;
+            font-size: 10pt;
+        }
+        .eval-grid > div {
+            background: white;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+        }
+        .eval-grid .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            font-weight: bold;
+            justify-content: center;
+        }
+        .eval-grid .dim {
+            background: var(--bg-warm);
+            font-weight: bold;
+            color: var(--primary);
+            justify-content: center;
+        }
+        .eval-content {
+            flex-direction: column;
+            align-items: flex-start !important;
+            gap: 6px;
+        }
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 22px 0;
+        }
+        .feature-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 3px 12px var(--shadow);
+        }
+        .feature-num {
+            font-size: 26pt;
+            font-weight: bold;
+            color: var(--primary-light);
+            margin-bottom: 8px;
+        }
+        .feature-title {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 11pt;
+            margin-bottom: 10px;
+        }
+        .feature-desc {
+            font-size: 9.5pt;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .key-text {
+            color: var(--primary);
+            font-weight: bold;
+            background: linear-gradient(transparent 60%, rgba(30, 58, 95, 0.15) 60%);
+            padding: 0 3px;
+        }
+        .keyword { color: var(--accent); font-weight: bold; }
+        .toc { margin: 35px 0; }
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            padding: 10px 0;
+            border-bottom: 1px dotted var(--border);
+        }
+        .toc-num {
+            color: var(--primary);
+            font-weight: bold;
+            width: 35px;
+            font-size: 12pt;
+        }
+        .toc-title {
+            flex: 1;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+        .toc-sub {
+            padding-left: 35px;
+            font-size: 10.5pt;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+        .dual-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 22px 0;
+        }
+        .dual-card {
+            background: white;
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 4px 15px var(--shadow);
+            border: 2px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        .dual-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 5px;
+        }
+        .dual-card.left-card::before {
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        }
+        .dual-card.right-card::before {
+            background: linear-gradient(90deg, var(--success), var(--success-light));
+        }
+        .dual-card-title {
+            font-weight: bold;
+            font-size: 13pt;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .left-card .dual-card-title { color: var(--accent); }
+        .right-card .dual-card-title { color: var(--success); }
+        .dual-card-content {
+            font-size: 10.5pt;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+        .dual-card-content ul {
+            padding-left: 1.5em;
+            margin: 10px 0;
+        }
+        .dual-card-content li { margin-bottom: 8px; }
+        .strategy-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin: 22px 0;
+        }
+        .strategy-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px var(--shadow);
+            border: 2px solid var(--border);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .strategy-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+        }
+        .strategy-card.problem::before {
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        }
+        .strategy-card.solution::before {
+            background: linear-gradient(90deg, var(--success), var(--success-light));
+        }
+        .strategy-card-label {
+            font-size: 10pt;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .strategy-card-title {
+            font-weight: bold;
+            font-size: 13pt;
+            margin-bottom: 15px;
+        }
+        .strategy-card.problem .strategy-card-title { color: var(--accent); }
+        .strategy-card.solution .strategy-card-title { color: var(--success); }
+        .strategy-card-content {
+            font-size: 10pt;
+            line-height: 1.7;
+            color: var(--text-main);
+        }
+        .strategy-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24pt;
+            color: var(--primary);
+        }
+        .lesson-plan-container { margin: 18px 0; }
+        .lesson-plan-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            box-shadow: 0 3px 12px var(--shadow);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            page-break-inside: avoid;
+        }
+        .lesson-plan-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .lesson-plan-phase {
+            background: rgba(255,255,255,0.2);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 10.5pt;
+        }
+        .lesson-plan-time { font-size: 10pt; opacity: 0.9; }
+        .lesson-plan-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        .lesson-plan-box { padding: 18px; }
+        .lesson-plan-box.left-box {
+            background: var(--bg-warm);
+            border-right: 2px solid var(--border);
+        }
+        .lesson-plan-box.right-box { background: white; }
+        .lesson-plan-box-title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .left-box .lesson-plan-box-title { color: var(--primary); }
+        .right-box .lesson-plan-box-title { color: var(--success); }
+        .lesson-plan-box-content {
+            font-size: 10pt;
+            line-height: 1.8;
+            color: var(--text-main);
+        }
+        .lesson-plan-box-content p {
+            text-indent: 0;
+            margin-bottom: 8px;
+        }
+        .lesson-plan-box-content .design-intent {
+            background: #f0fff4;
+            border-left: 3px solid var(--success);
+            padding: 10px 12px;
+            margin-top: 12px;
+            border-radius: 0 6px 6px 0;
+            font-size: 9.5pt;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        /* 课题框架图样式 */
+        .framework-container {
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #bdc3c7;
+            padding: 25px;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(30, 60, 114, 0.15);
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .framework-container::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #1e3c72, #2980b9, #c0392b);
+            border-radius: 4px 4px 0 0;
+        }
+        .fw-badge {
+            position: absolute;
+            top: -12px; right: 30px;
+            background: #c0392b;
+            color: white;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(192, 57, 43, 0.4);
+        }
+        .fw-header {
+            text-align: center;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 14px;
+            border: none;
+            position: relative;
+            border-radius: 4px;
+            box-shadow: 0 4px 6px rgba(30, 60, 114, 0.2);
+        }
+        .fw-header::before, .fw-header::after {
+            content: "◆";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+        }
+        .fw-header::before { left: 30px; }
+        .fw-header::after { right: 30px; }
+        .fw-header h1 {
+            font-size: 22px;
+            color: #ffffff;
+            letter-spacing: 4px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            margin: 0;
+        }
+        .fw-pathway {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+        .fw-path-item {
+            background: #f8f9fa;
+            border: 1px solid #7f8c8d;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #34495e;
+            font-weight: 500;
+        }
+        .fw-path-arrow { color: #7f8c8d; font-size: 14px; font-weight: bold; }
+        .fw-current {
+            background: #c0392b;
+            color: white;
+            border-color: #a93226;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(192, 57, 43, 0.3);
+        }
+        .fw-horizontal-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #ecf0f1, #d5dbdb);
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 4px solid #2980b9;
+        }
+        .fw-flow-node {
+            background: white;
+            border: 1.5px solid #5d6d7e;
+            padding: 8px 12px;
+            font-size: 12px;
+            color: #2c3e50;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .fw-flow-arrow { margin: 0 10px; color: #5d6d7e; font-size: 12px; }
+        .fw-current-node {
+            background: #2980b9;
+            color: white;
+            border-color: #2471a3;
+            padding: 10px 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(41, 128, 185, 0.4);
+            transform: scale(1.05);
+        }
+        .fw-main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 35px 0;
+            position: relative;
+            padding: 0 20px;
+        }
+        .fw-content-node {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 3px solid;
+            position: relative;
+            z-index: 2;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .fw-node-title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+        .fw-node-sub {
+            font-size: 10px;
+            line-height: 1.4;
+            padding: 0 8px;
+            font-weight: 500;
+        }
+        .fw-node-shi {
+            border-color: #1e3c72;
+            background: linear-gradient(135deg, #ebf5fb 0%, #d6eaf8 100%);
+            color: #1e3c72;
+        }
+        .fw-node-lei {
+            border-color: #2980b9;
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            color: #2471a3;
+        }
+        .fw-node-dui {
+            width: 100px;
+            height: 100px;
+            transform: rotate(45deg);
+            border-color: #c0392b;
+            background: linear-gradient(135deg, #fdedec 0%, #fadbd8 100%);
+            color: #922b21;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(192, 57, 43, 0.2);
+        }
+        .fw-node-dui .fw-node-title, .fw-node-dui .fw-node-sub { transform: rotate(-45deg); }
+        .fw-node-dui .fw-node-title { font-size: 12px; }
+        .fw-node-ren {
+            border-color: #34495e;
+            background: linear-gradient(135deg, #f4f6f7 0%, #e5e8e8 100%);
+            color: #2c3e50;
+        }
+        .fw-node-xian {
+            border-color: #154360;
+            background: linear-gradient(135deg, #eaf2f8 0%, #d4e6f1 100%);
+            color: #1a5276;
+        }
+        .fw-connector {
+            position: absolute;
+            height: 4px;
+            background: linear-gradient(to right, #1e3c72 0%, #2980b9 25%, #c0392b 50%, #34495e 75%, #154360 100%);
+            top: 50%;
+            left: 130px;
+            right: 130px;
+            transform: translateY(-50%);
+            z-index: 1;
+            border-radius: 2px;
+            opacity: 0.8;
+        }
+        .fw-arrow-right {
+            position: absolute;
+            right: 130px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #154360;
+            font-size: 16px;
+            z-index: 3;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .fw-vertical-links {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            position: relative;
+            padding: 0 30px;
+        }
+        .fw-vlink {
+            background: #f8f9fa;
+            border: 2px dashed #7f8c8d;
+            padding: 12px;
+            width: 180px;
+            text-align: center;
+            font-size: 11px;
+            color: #566573;
+            border-radius: 6px;
+        }
+        .fw-vlink-title {
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #2c3e50;
+            font-size: 12px;
+        }
+        .fw-center-connector {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            background: #c0392b;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            box-shadow: 0 4px 8px rgba(192, 57, 43, 0.3);
+        }
+        .fw-bottom-logic {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            gap: 15px;
+        }
+        .fw-logic-box {
+            flex: 1;
+            padding: 14px;
+            text-align: center;
+            border: 2px solid;
+            border-radius: 6px;
+        }
+        .fw-logic-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: 2px;
+        }
+        .fw-logic-sub {
+            font-size: 11px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        .fw-xiaxue {
+            background: linear-gradient(135deg, #ebf5fb 0%, #d6eaf8 100%);
+            border-color: #2980b9;
+            color: #1a5276;
+        }
+        .fw-wenyi {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+            border-color: #922b21;
+            color: white;
+            box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+        }
+        .fw-shangda {
+            background: linear-gradient(135deg, #f4f6f7 0%, #e5e8e8 100%);
+            border-color: #566573;
+            color: #2c3e50;
+        }
+        .fw-logic-arrow { font-size: 24px; color: #7f8c8d; font-weight: 300; }
+        @media print {
+            body { background: white; }
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                padding: 15mm 18mm 20mm 18mm;
+            }
+            .page-header { top: 10mm; }
+            .page-footer { bottom: 8mm; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 封面页 -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="cover">
+            <div class="cover-badge">湖南省高校青年教师教学竞赛</div>
+            <h1 class="cover-title">《词的本义与引申义》</h1>
+            <div class="cover-subtitle">教学设计文稿</div>
+            <div class="cover-meta">
+                <div class="meta-item">
+                    <span class="meta-label">课程名称</span>
+                    <span class="meta-value">古代汉语</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">授课对象</span>
+                    <span class="meta-value">汉语言文学专业二年级</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">课时安排</span>
+                    <span class="meta-value">1课时（45分钟）</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">教材依据</span>
+                    <span class="meta-value">蒋冀骋《古代汉语》</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">教学场地</span>
+                    <span class="meta-value">智慧教室</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">课程定位</span>
+                    <span class="meta-value">单元三·专题7·第2课时</span>
+                </div>
+            </div>
+            <!-- 课题框架图 -->
+            <div class="framework-container">
+                <div class="fw-badge">青教赛课程设计</div>
+                <div class="fw-header">
+                    <h1>《古代汉语》· 词的本义与引申义</h1>
+                </div>
+                <div class="fw-pathway">
+                    <div class="fw-path-item">9大单元</div>
+                    <div class="fw-path-arrow">→</div>
+                    <div class="fw-path-item">单元三</div>
+                    <div class="fw-path-arrow">→</div>
+                    <div class="fw-path-item">专题7 词义系统</div>
+                    <div class="fw-path-arrow">→</div>
+                    <div class="fw-path-item fw-current">★第4课 课时26</div>
+                </div>
+                <div class="fw-horizontal-flow">
+                    <div class="fw-flow-node">课时25词汇总论</div>
+                    <div class="fw-flow-arrow">→</div>
+                    <div class="fw-flow-node fw-current-node">课时26(本课) 词义家族树</div>
+                    <div class="fw-flow-arrow">→</div>
+                    <div class="fw-flow-node">课时27本义探求方法</div>
+                    <div class="fw-flow-arrow">→</div>
+                    <div class="fw-flow-node">课时28引申规律</div>
+                </div>
+                <div class="fw-main-content">
+                    <div class="fw-connector"></div>
+                    <div class="fw-arrow-right">▶</div>
+                    <div class="fw-content-node fw-node-shi">
+                        <div class="fw-node-title">韬字探究</div>
+                        <div class="fw-node-sub">剑衣/隐藏</div>
+                    </div>
+                    <div class="fw-content-node fw-node-lei">
+                        <div class="fw-node-title">辐射式引申</div>
+                        <div class="fw-node-sub">隐藏→收敛→包容</div>
+                    </div>
+                    <div class="fw-content-node fw-node-dui">
+                        <div class="fw-node-title">对比探究</div>
+                        <div class="fw-node-sub">守正创新<br>形义互证</div>
+                    </div>
+                    <div class="fw-content-node fw-node-ren">
+                        <div class="fw-node-title">晦字探究</div>
+                        <div class="fw-node-sub">月末/昏暗</div>
+                    </div>
+                    <div class="fw-content-node fw-node-xian">
+                        <div class="fw-node-title">现代传承</div>
+                        <div class="fw-node-sub">韬光养晦外交/网络新词</div>
+                    </div>
+                </div>
+                <div class="fw-vertical-links">
+                    <div class="fw-vlink">
+                        <div class="fw-vlink-title">左承</div>
+                        <div>专题6·部首系统<br>（课时21-24）<br>造字法基础</div>
+                    </div>
+                    <div class="fw-center-connector">承</div>
+                    <div class="fw-vlink">
+                        <div class="fw-vlink-title">右启</div>
+                        <div>专题8·同义词辨析<br>（课时29-32）<br>语义辨析系统</div>
+                    </div>
+                </div>
+                <div class="fw-bottom-logic">
+                    <div class="fw-logic-box fw-xiaxue">
+                        <div class="fw-logic-title">下学</div>
+                        <div class="fw-logic-sub">据形求义 · 本义确定<br>（工具理性）</div>
+                    </div>
+                    <div class="fw-logic-arrow">↔</div>
+                    <div class="fw-logic-box fw-wenyi">
+                        <div class="fw-logic-title">文以载道</div>
+                        <div class="fw-logic-sub">引申图谱 · 语义互证<br>（实证方法）</div>
+                    </div>
+                    <div class="fw-logic-arrow">↔</div>
+                    <div class="fw-logic-box fw-shangda">
+                        <div class="fw-logic-title">上达</div>
+                        <div class="fw-logic-sub">守正创新 · 文化传承<br>（价值理性）</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">1</span>
+        </div>
+    </div>
+
+    <!-- 目录页 -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header" style="margin-top: 0;">
+            <div class="section-num">目</div>
+            <h2 class="section-title">目录 CONTENTS</h2>
+        </div>
+        <div class="toc">
+            <div class="toc-item">
+                <span class="toc-num">一</span>
+                <span class="toc-title">课程纲要</span>
+            </div>
+            <div class="toc-sub">课题简介 · 教材内容重构 · 课程思政元素</div>
+            <div class="toc-item">
+                <span class="toc-num">二</span>
+                <span class="toc-title">学情分析</span>
+            </div>
+            <div class="toc-sub">认知现状 · 问题诊断 · 教学对策</div>
+            <div class="toc-item">
+                <span class="toc-num">三</span>
+                <span class="toc-title">教学重点与难点</span>
+            </div>
+            <div class="toc-sub">教学重点 · 教学难点 · 突破策略</div>
+            <div class="toc-item">
+                <span class="toc-num">四</span>
+                <span class="toc-title">教学目标</span>
+            </div>
+            <div class="toc-sub">文识维度 · 文能维度 · 文心维度</div>
+            <div class="toc-item">
+                <span class="toc-num">五</span>
+                <span class="toc-title">教学思想与方法</span>
+            </div>
+            <div class="toc-sub">教学思想 · 教学方法 · 教学资源</div>
+            <div class="toc-item">
+                <span class="toc-num">六</span>
+                <span class="toc-title">教学安排</span>
+            </div>
+            <div class="toc-sub">课前-课中-课后安排 · 课中教学过程详案</div>
+            <div class="toc-item">
+                <span class="toc-num">七</span>
+                <span class="toc-title">教学评价</span>
+            </div>
+            <div class="toc-sub">评价维度 · 特色评价设计</div>
+        </div>
+        <div class="card" style="margin-top: 40px;">
+            <div class="card-title"><span class="card-icon">💡</span>设计理念</div>
+            <p class="no-indent">本课以<span class="key-text">"韬光养晦"</span>为典型案例，通过<span class="key-text">"因形求义"</span>方法论，构建<span class="key-text">"下学上达、文以载道、明慧立德"</span>的三维递进教学体系，实现从字形分析到文化精神的价值跃迁。</p>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">2</span>
+        </div>
+    </div>
+
+    <!-- 第一页内容：课程纲要 -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header">
+            <div class="section-num">一</div>
+            <h2 class="section-title">课程纲要</h2>
+        </div>
+        <h3>1.1 课题简介</h3>
+        <p><span class="key-text">"词的本义与引申义"</span>是《古代汉语》课程<span class="keyword">"单元三：词汇语义系统"</span>中<span class="keyword">"专题7：词的本义与引申义"</span>的第2课时。作为连接字形分析与词义演变的<span class="key-text">核心枢纽课</span>，本课时承担着从<span class="keyword">"形符识读"到"义理贯通"</span>的认知跃迁功能。</p>
+        <div class="card">
+            <div class="card-title"><span class="card-icon">🎯</span>核心定位</div>
+            <p class="no-indent">通过<span class="key-text">"韬光养晦"</span>典型案例深度剖析，奠定<span class="keyword">"因形求义、因声求义"</span>的小学功底，落实<span class="key-text">"下学上达"</span>教学思想，激发对中华文明<span class="keyword">"与时俱进"</span>语言智慧的深度认同。</p>
+        </div>
+        <p>第2学时作为本专题的<span class="key-text">方法论核心课</span>，旨在通过<span class="keyword">"本义探究+引申图谱绘制"</span>的具身任务，帮助学生建立从字形分析到词义网络的分析框架：纵向承接课时1的学理认知，为课时3、4提供方法论支撑；横向贯通后续专题8、9，提供词义演变历史视角。</p>
+        <h3>1.2 教材内容重构</h3>
+        <p>原教材（蒋冀骋《古代汉语》上册"词汇章"）存在三方面改进空间：</p>
+        <ul>
+            <li><span class="tag tag-accent">静态呈现</span>词义演变静态罗列，缺乏从"源"到"流"的动态线索</li>
+            <li><span class="tag tag-accent">孤立分析</span>字例零散，缺少"本义→引申义1→引申义2"链条呈现</li>
+            <li><span class="tag tag-accent">古今脱节</span>聚焦古代词义，对当代词汇使用、跨文化传播着墨甚少</li>
+        </ul>
+        <div class="figure">
+            <img src="四维图.png" alt="三维四层课程内容体系" style="max-width: 90%;">
+            <div class="figure-caption">图2 构建"三维四层"课程内容体系</div>
+        </div>
+        <h3>1.3 课程思政元素</h3>
+        <p>本课思政教育遵循<span class="key-text">"隐性融入、润物无声"</span>原则，将价值引领有机镶嵌于词义演变的历史逻辑与教学情境之中。学生在<span class="keyword">"韬→晦"</span>的引申探究中，自然感知中华文明<span class="key-text">"韬光养晦"</span>的处世智慧与<span class="key-text">"守正创新"</span>的时代精神。</p>
+        <div class="ideology-grid">
+            <div class="ideology-card">
+                <div class="ideology-title">文化自信</div>
+                <div class="ideology-sub">文明的连续性</div>
+                <div class="ideology-content">
+                    通过汉字部首文化内涵的深度探究，学生在<span class="key-text">"从祭坛到发射场"</span>的历史情境中感悟中华文明从敬神到重人的精神传承，形成"汉字是中华文明连续性载体"的深刻认知。
+                </div>
+            </div>
+            <div class="ideology-card">
+                <div class="ideology-title">人文精神</div>
+                <div class="ideology-sub">以人为本</div>
+                <div class="ideology-content">
+                    通过示部字到人部字演变的深度探究，学生在<span class="key-text">"敬神"与"重人"</span>的价值对比中体悟先民"以人为本"的思想转向，坚定人文立场。
+                </div>
+            </div>
+            <div class="ideology-card">
+                <div class="ideology-title">创新精神</div>
+                <div class="ideology-sub">主动的探索</div>
+                <div class="ideology-content">
+                    通过《天问》精神与现代航天命名的深度探究，学生在<span class="key-text">"从被动祭祀到主动追问宇宙"</span>的思维跃迁中理解变革之需，产生勇于探索的责任担当。
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">3</span>
+        </div>
+    </div>
+
+    <!-- 第二页：学情分析 -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header">
+            <div class="section-num">二</div>
+            <h2 class="section-title">学情分析</h2>
+        </div>
+        <p>通过对授课班级的前测调查与访谈，发现学生存在显著的<span class="key-text">"识字多、溯本少"</span>现象，具体表现为以下三个问题：</p>
+        <div class="highlight-box">
+            <div class="highlight-title">学情问题诊断</div>
+            <div class="highlight-content">
+                <ul>
+                    <li><strong>兴趣浓厚但方法缺失：</strong>对《说文解字》因形求义有初步印象，但对引申规律解读缺乏方法论认知，未建立<span class="keyword">"形→本义→引申义"</span>系统分析能力。</li>
+                    <li><strong>数字依赖传统薄弱：</strong>偏好电子化检索与AI翻译，但缺乏<span class="keyword">"因形求义""因声求义"</span>等传统训诂方法的实证训练，难以将字形符号转化为引申脉络图。</li>
+                    <li><strong>应试记忆关联薄弱：</strong>认为词义是<span class="keyword">"需要背诵的多个义项"</span>，与当代语言生活距离遥远；但85%学生对网络新词、外交辞令翻译等现代语言现象兴趣浓厚，存在<span class="key-text">"义项记忆牢、演变逻辑弱"</span>的能力断层。</li>
+                </ul>
+            </div>
+        </div>
+        <h3>教学对策设计</h3>
+        <p>针对上述学情问题，本课采取以下教学对策：</p>
+        <div class="strategy-card-grid">
+            <div class="strategy-card problem">
+                <div class="strategy-card-label">学生课前状态</div>
+                <div class="strategy-card-title">知形忘义</div>
+                <div class="strategy-card-content">学生知道字形但忘记本义，缺乏从形到义的系统关联能力</div>
+            </div>
+            <div class="strategy-card problem">
+                <div class="strategy-card-label">核心问题</div>
+                <div class="strategy-card-title">思辨缺位</div>
+                <div class="strategy-card-content">学生缺乏主动思辨，对词义演变规律理解不深</div>
+            </div>
+            <div class="strategy-card solution">
+                <div class="strategy-card-label">本课教学对策</div>
+                <div class="strategy-card-title">建立系统关联</div>
+                <div class="strategy-card-content">通过AI对话与图谱绘制，使学生建立<span class="key-text">"形-本-申"</span>系统关联</div>
+            </div>
+        </div>
+        <div class="strategy-card-grid">
+            <div class="strategy-card problem">
+                <div class="strategy-card-label">学生课前状态</div>
+                <div class="strategy-card-title">思辨缺位</div>
+                <div class="strategy-card-content">学生被动接受知识，缺乏主动探究词义演变的意识</div>
+            </div>
+            <div class="strategy-card problem">
+                <div class="strategy-card-label">核心问题</div>
+                <div class="strategy-card-title">规律不明</div>
+                <div class="strategy-card-content">学生对词义引申规律认识模糊，无法自主推演</div>
+            </div>
+            <div class="strategy-card solution">
+                <div class="strategy-card-label">本课教学对策</div>
+                <div class="strategy-card-title">发现推演逻辑</div>
+                <div class="strategy-card-content">通过对比分析，使学生自主发现<span class="key-text">"源→流"</span>的词义推演逻辑</div>
+            </div>
+        </div>
+        <div class="strategy-card-grid">
+            <div class="strategy-card problem">
+                <div class="strategy-card-label">学生课前状态</div>
+                <div class="strategy-card-title">规律不明</div>
+                <div class="strategy-card-content">学生不理解词义演变规律，应用困难</div>
+            </div>
+            <div class="strategy-card problem">
+                <div class="strategy-card-label">核心问题</div>
+                <div class="strategy-card-title">应用困难</div>
+                <div class="strategy-card-content">学生难以将所学知识应用于实际语言分析</div>
+            </div>
+            <div class="strategy-card solution">
+                <div class="strategy-card-label">本课教学对策</div>
+                <div class="strategy-card-title">体验智慧跃迁</div>
+                <div class="strategy-card-content">通过三阶任务使学生真实体验<span class="key-text">"从韬晦到创新"</span>的文明智慧跃迁</div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">4</span>
+        </div>
+    </div>
+</body>
+</html>
+
+    <!-- 第三页：教学重难点 -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header">
+            <div class="section-num">三</div>
+            <h2 class="section-title">教学重点与难点</h2>
+        </div>
+        <h3>3.1 教学重点</h3>
+        <div class="dual-card-grid">
+            <div class="dual-card left-card">
+                <div class="dual-card-title">📌 重点一</div>
+                <div class="dual-card-content">
+                    <p class="no-indent" style="font-weight:bold; color:var(--accent); margin-bottom:10px;">"辐射·链条"二式引申对比逻辑</p>
+                    <p class="no-indent">学生能掌握辐射式与链条式的推演脉络，理解二式并非简单分类，而是体现<span class="key-text">"从具体到抽象"</span>的认知思维跃迁，这是词义演变分析入门的基础能力。</p>
+                </div>
+            </div>
+            <div class="dual-card right-card">
+                <div class="dual-card-title">💡 处理策略</div>
+                <div class="dual-card-content">
+                    <ul>
+                        <li><strong>二站递进文化体验</strong>：对比表强化二部文化差异</li>
+                        <li><strong>AI辅助翻译辨析</strong>：洞察<span class="key-text">"从本义到外交"</span>的传承智慧</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dual-card-grid">
+            <div class="dual-card left-card">
+                <div class="dual-card-title">📌 重点二</div>
+                <div class="dual-card-content">
+                    <p class="no-indent" style="font-weight:bold; color:var(--accent); margin-bottom:10px;">词义演变的现代传承与语义生命力</p>
+                    <p class="no-indent">理解<span class="key-text">"韬光养晦"</span>从古义到今用反映的中华文明连续性，能联系外交辞令翻译等现代案例，体会汉语词义从古代剑衣到现代外交的精神传承。</p>
+                </div>
+            </div>
+            <div class="dual-card right-card">
+                <div class="dual-card-title">💡 处理策略</div>
+                <div class="dual-card-content">
+                    <ul>
+                        <li><strong>古今对照分析</strong>：对比古代本义与现代引申义的关联</li>
+                        <li><strong>外交案例研讨</strong>：通过真实外交辞令翻译案例深化理解</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <h3>3.2 教学难点</h3>
+        <div class="dual-card-grid">
+            <div class="dual-card left-card">
+                <div class="dual-card-title">🔒 难点一</div>
+                <div class="dual-card-content">
+                    <p class="no-indent" style="font-weight:bold; color:var(--accent); margin-bottom:10px;">字形本义到引申义理的阐释跃迁</p>
+                    <p class="no-indent">学生习惯于具象识记，面对<span class="keyword">"韬""晦"</span>等字时易陷入本义描摹的细节堆砌（剑衣、月末），难以舍弃机械记忆，理解<span class="key-text">"据形求义"到"因义见理"</span>的必要性。</p>
+                </div>
+            </div>
+            <div class="dual-card right-card">
+                <div class="dual-card-title">🔧 突破策略</div>
+                <div class="dual-card-content">
+                    <ul>
+                        <li><strong>AI辅助词义溯源</strong>：利用AI工具辨析本义与引申义边界</li>
+                        <li><strong>阶梯式引导</strong>：从具象字形逐步过渡到抽象义理</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dual-card-grid">
+            <div class="dual-card left-card">
+                <div class="dual-card-title">🔒 难点二</div>
+                <div class="dual-card-content">
+                    <p class="no-indent" style="font-weight:bold; color:var(--accent); margin-bottom:10px;">辐射式与链条式的引申逻辑差异辨析</p>
+                    <p class="no-indent">学生易混淆两种推演路径，不理解<span class="key-text">"多向并发"</span>与<span class="key-text">"一环扣一环"</span>的本质区别。需通过引申路径辩论，要求学生对<span class="keyword">"韬""晦"</span>二字分别进行辐射式、链条式两种引申方案设计。</p>
+                </div>
+            </div>
+            <div class="dual-card right-card">
+                <div class="dual-card-title">🔧 突破策略</div>
+                <div class="dual-card-content">
+                    <ul>
+                        <li><strong>引申方案辩论</strong>：小组互读辨析辐射链条差异</li>
+                        <li><strong>图谱对比展示</strong>：可视化呈现两种引申方式的区别</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">5</span>
+        </div>
+    </div>
+
+    <!-- 第四页：教学目标 -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header">
+            <div class="section-num">四</div>
+            <h2 class="section-title">教学目标</h2>
+        </div>
+        <p>依据布鲁姆教育目标分类学，将<span class="key-text">"下学上达"</span>理念转化为<span class="keyword">"文识—文能—文心"</span>三维递进体系。从基础认知起步，经由词义探究与图谱绘制，最终升华为文化阐释与价值认同。</p>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="feature-num">01</div>
+                <div class="feature-title">文识维度</div>
+                <div class="feature-desc">准确界定本义与引申义概念内涵，根据字形结构判断词义演变类型</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-num">02</div>
+                <div class="feature-title">文能维度</div>
+                <div class="feature-desc">运用"源→流"推演逻辑阐释词义演变，归纳"韬→晦"引申规律</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-num">03</div>
+                <div class="feature-title">文心维度</div>
+                <div class="feature-desc">阐释"从韬晦到创新"的语义传承智慧，论证守正创新的文明连续性</div>
+            </div>
+        </div>
+        <div class="figure">
+            <img src="能力图.png" alt="三维教学目标体系" style="max-width: 90%;">
+            <div class="figure-caption">图3 三维教学目标体系（文识·文能·文心）</div>
+        </div>
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-title"><span class="card-icon">🎯</span>目标达成路径</div>
+            <p class="no-indent"><span class="tag">知识习得</span>通过"韬""晦"字例掌握本义探求方法 → <span class="tag">能力培养</span>绘制引申图谱理解演变规律 → <span class="tag">价值引领</span>联系外交辞令体会文化传承</p>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">6</span>
+        </div>
+    </div>
+
+    <!-- 第五页：教学思想与方法 -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header">
+            <div class="section-num">五</div>
+            <h2 class="section-title">教学思想与方法</h2>
+        </div>
+        <h3>5.1 教学思想</h3>
+        <p>以词义演变规律为载体，融传统训诂学智慧与现代学习科学于一体，通过<span class="key-text">"本义→引申义"</span>的深度探究，实现<span class="keyword">"识字"与"明道"</span>的有机统一。</p>
+        <div class="two-col" style="margin: 15px 0;">
+            <div class="card">
+                <div class="card-title"><span class="card-icon">📚</span>中心理念</div>
+                <p class="no-indent"><span class="key-text">下学上达、文以载道、明慧立德</span></p>
+                <p class="no-indent" style="margin-top: 8px; font-size: 10pt; color: var(--text-light);">设计"词义溯源二阶"递进任务，每阶嵌入"形→义→理"价值锚点</p>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">💻</span>实现路径</div>
+                <p class="no-indent"><span class="key-text">人机协同、思政交融、知行合一</span></p>
+                <p class="no-indent" style="margin-top: 8px; font-size: 10pt; color: var(--text-light);">运用AI前测、翻译对比等技术手段辅助教学</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title"><span class="card-icon">🌟</span>基本原则</div>
+            <p class="no-indent"><span class="key-text">情境相生、学以致用、古今贯通</span>——创设"邓小平外交战略翻译之谜"真实情境，设计<span class="keyword">"字源探析→引申图谱→误用辨析→现代应用"</span>完整链条。</p>
+        </div>
+        <h3>5.2 教学方法与工具</h3>
+        <p>以<span class="key-text">BOPPPS模型</span>为教学组织框架，依循<span class="keyword">"导入-目标-前测-参与式学习-后测-总结"</span>闭环流程，综合运用四种专属教学方法：</p>
+        <div class="feature-cards" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="feature-card" style="text-align: left;">
+                <div class="feature-title">📖 文献实证法</div>
+                <div class="feature-desc">组内分工查《说文》本义、搜语料例证、拼合词义演变全景，培养实证精神</div>
+            </div>
+            <div class="feature-card" style="text-align: left;">
+                <div class="feature-title">🗺️ 引申图谱法</div>
+                <div class="feature-desc">自主构建词义引申网络，梳理义类谱系，培养系统化思维</div>
+            </div>
+            <div class="feature-card" style="text-align: left;">
+                <div class="feature-title">🔍 支架式教学</div>
+                <div class="feature-desc">创设外交辞令困境，通过形符拆解，建立从形知义的探究动机</div>
+            </div>
+            <div class="feature-card" style="text-align: left;">
+                <div class="feature-title">⚖️ 对比辨析法</div>
+                <div class="feature-desc">中西译法二元对比，辨析"韬"的本质，深化语义传承理解</div>
+            </div>
+        </div>
+        <div class="figure">
+            <img src="方法图.png" alt="人机协作实现路径" style="max-width: 90%;">
+            <div class="figure-caption">图4 人机协作、思政交融、知行合一实现路径</div>
+        </div>
+        <h3>5.3 教学资源</h3>
+        <p>遵循<span class="key-text">"基础夯实与拓展创新并重"</span>原则，分为基础性与拓展性两大层级：</p>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <div class="resource-title">📚 基础性课程资源（必读、必做）</div>
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <span class="resource-bullet">▸</span>
+                        <span><strong>教材：</strong>蒋冀骋《古代汉语》</span>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-bullet">▸</span>
+                        <span><strong>实物教具：</strong>A3绘图纸、彩笔</span>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-bullet">▸</span>
+                        <span><strong>数字化工具：</strong>学习通、在线前测系统、AI太炎语料库</span>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-bullet">▸</span>
+                        <span><strong>音视频素材：</strong>"韬光养晦"外交语境相关历史影像</span>
+                    </div>
+                </div>
+            </div>
+            <div class="resource-card">
+                <div class="resource-title">🔍 拓展性课程资源（选读、选做）</div>
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <span class="resource-bullet">▸</span>
+                        <span><strong>数字平台：</strong>《说文解字》在线检索、汉典网、古汉语历时词义语料库</span>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-bullet">▸</span>
+                        <span><strong>学术文献：</strong>《说文解字》《词汇学概论》</span>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-bullet">▸</span>
+                        <span><strong>AI辅助工具：</strong>讯飞听见、通义听悟、Kimi AI、文心一言、DeepSeek</span>
+                    </div>
+                    <div class="resource-item">
+                        <span class="resource-bullet">▸</span>
+                        <span><strong>实践活动资源：</strong>课后分层作业库、汉字文创案例库</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">7</span>
+        </div>
+    </div>
+
+    <!-- 第六页：教学安排（上） -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header">
+            <div class="section-num">六</div>
+            <h2 class="section-title">教学安排</h2>
+        </div>
+        <h3>6.1 课前-课中-课后学习任务安排</h3>
+        <p>按<span class="key-text">"课前预学—课中探究—课后拓展"</span>三阶段推进，层层递进。各阶段任务各有侧重又相互呼应，引导学生在情境体验与分层实践中完成知识建构与迁移。</p>
+        <div class="card">
+            <div class="card-title"><span class="card-icon">📋</span>三阶段任务设计</div>
+            <p class="no-indent"><span class="tag">课前</span>AI前测诊断 + 字源预习任务 → <span class="tag">课中</span>BOPPPS六环节探究 → <span class="tag">课后</span>引申图谱作业 + 反思短文</p>
+        </div>
+        <div class="figure">
+            <img src="流程图.png" alt="BOPPPS教学流程设计" style="max-width: 95%;">
+            <div class="figure-caption">图5 BOPPPS教学流程设计（预-达-测-游-悟-拓）</div>
+        </div>
+        <h3>6.2 课中教学过程设计详案</h3>
+        <div class="lesson-plan-container">
+            <!-- 国策导入 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">国策导入</span>
+                    <span class="lesson-plan-time">4分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>邓小平90年代外交战略背景，"韬光养晦"翻译争议情境，AI翻译与西方汉学家译法对比</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. 展示外交战略背景，让学生尝试翻译"韬光养晦"</p>
+                            <p>2. 展示AI翻译结果与西方译法（conceal one's talent）</p>
+                            <p>3. 设问陷阱："若身处外交场合，你会选哪种？"（预期学生选择带阴谋论色彩的译法）</p>
+                            <p>4. 呈现两种译法对比，引出核心问题——关键在于理解"韬"与"晦"的本义与引申脉络</p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. 尝试自主翻译"韬光养晦"</p>
+                            <p>2. 对比AI与西方译法，做出选择并说明理由</p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>通过外交真实情境制造认知冲突，激发探究动机；通过"翻译陷阱"暴露词义理解的重要性
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 前测诊断 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">前测诊断</span>
+                    <span class="lesson-plan-time">3分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>知到智慧树APP课前字源测试数据，"韬""晦"本义认知盲区诊断</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. 展示APP字源测试结果数据</p>
+                            <p>2. 指出高频错误：多数学生将"韬"理解为"谋略"、"晦"理解为"晦暗"</p>
+                            <p>3. 预测并验证：学生普遍不知"韬"（剑衣）与"晦"（月末）的本义</p>
+                            <p>4. 明确本课需补足的认知缺口：从字形探求本义的方法</p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. 查看APP个人及班级测试数据</p>
+                            <p>2. 自我诊断对本义概念的掌握盲区</p>
+                            <p>3. 明确需通过本课解决的"因形求义"方法缺失问题</p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>基于数据的精准诊断，动态调整教学重点，建立"本义-引申义"认知框架预期
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 目标阐明 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">目标阐明</span>
+                    <span class="lesson-plan-time">2分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>本课学习目标与探究路线图，"因形求义"到"外交辞令验证"的任务链</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. 阐明学习目标：掌握"因形求义"方法，绘制"韬""晦"词义演变图谱，还原"韬光养晦"准确内涵</p>
+                            <p>2. 展示探究路线图：字形分析→本义确定→引申网络绘制→外交辞令验证</p>
+                            <p>3. 预告评价标准：本义探求准确度、引申图谱完整度、文化阐释深度</p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. 记录学习目标与探究路线</p>
+                            <p>2. 明确"从字形到词义网络"的学习路径</p>
+                            <p>3. 了解本课将通过绘制词义图谱解决导入环节的翻译争议</p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>目标导向，让学生明确学习终点（正确理解国策术语）与评价标准，建立任务驱动
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">8</span>
+        </div>
+    </div>
+
+    <!-- 第七页：教学安排（中） -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header" style="margin-top: 0;">
+            <div class="section-num">六</div>
+            <h2 class="section-title">教学安排（续）</h2>
+        </div>
+        <div class="lesson-plan-container">
+            <!-- 本义探求 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">本义探求</span>
+                    <span class="lesson-plan-time">8分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>"韬"的形训与"晦"的文献求证，本义概念的双重探求路径</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. <span class="keyword">"韬"字分解：</span>分析字形（从韦从舀，韦表皮革），引导学生得出本义<span class="key-text">"剑衣（剑鞘）"</span></p>
+                            <p>2. 给出定义：<span class="key-text">本义是根据字形构造或早期文献得出的词的最初意义</span></p>
+                            <p>3. <span class="keyword">"晦"字文献求证：</span>让学生先尝试因形求义（从日每声），发现"每"不直接表"月末"；转而展示《说文》《诗经》等早期文献，确定"晦"本义为"农历每月最后一天"</p>
+                            <p>4. 铺垫引申义概念：当本义消亡而主要使用后来意义时，这些即为<span class="key-text">"引申义"</span></p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. 观察"韬"字形，理解"韦"与皮革关联，记录"韬"本义：剑衣</p>
+                            <p>2. 尝试用因形求义分析"晦"，发现形训局限</p>
+                            <p>3. 观察早期文献用例，确定"晦"本义为月末</p>
+                            <p>4. 理解本义可通过<span class="key-text">"因形"或"查文献"</span>两种方式确定；初步感知本义与引申义的替代关系</p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>通过"韬"（成功形训）与"晦"（形训遇困转文献）的对比，展现本义探求的两种实证路径，为"因形求义"方法命名做铺垫
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 方法习得 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">方法习得</span>
+                    <span class="lesson-plan-time">5分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>"因形求义"训诂方法命名与"兵"字巩固练习</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. <span class="key-text">方法命名：</span>总结前述"韬"字案例，正式命名<span class="keyword">"因形求义"</span>——中国传统训诂学核心方法，最早见于《说文解字》，"视而可识，察而见意"</p>
+                            <p>2. <span class="key-text">巩固练习"兵"字：</span>展示"兵"字形（双手持斤），让学生练习确定本义，公布《说文》答案"械也（兵器）"</p>
+                            <p>3. 方法辨析：强调"兵"的本义是"兵器"而非"士兵"或"战争"，巩固<span class="key-text">"据形求本义"</span>思维</p>
+                            <p>4. 说明因形求义是探求本义的主要方法，文献为辅助</p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. 理解并记录"因形求义"方法名称及原理</p>
+                            <p>2. 分析"兵"字形结构（双手持斤），参与本义辨析（兵器vs士兵vs战争）</p>
+                            <p>3. 确认正确答案，区分本义与引申义（兵器→士兵→战争）</p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>方法论显性化，通过"兵"字即时练习强化本义识别技能，巩固从字形符号到本义确定的转化能力
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 词义引申 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">词义引申</span>
+                    <span class="lesson-plan-time">10分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>分组绘制引申图谱，辐射式、链条式、综合式三种引申方式</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. 布置任务：分组绘制词义演变图谱——<span class="tag">A组</span>探究"韬"，<span class="tag tag-secondary">B组</span>探究"晦"</p>
+                            <p>2. <span class="key-text">A组展示与辐射式：</span>学生展示"韬"脉络（剑衣→隐藏→收敛→包容），引出<span class="keyword">辐射式</span>——以本义为中心向不同方向并发引申，呈放射状</p>
+                            <p>3. <span class="key-text">B组展示与链条式：</span>学生展示"晦"脉络（月末→夜晚→昏暗→隐晦→倒霉），引出<span class="keyword">链条式</span>——一环扣一环线性传递</p>
+                            <p>4. 引申义定义：正式定义——<span class="key-text">由本义派生发展出来的意义</span></p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. A组绘制"韬"引申图谱（剑在鞘中→不露锋芒→收束光芒→有容乃大）</p>
+                            <p>2. B组绘制"晦"链条图谱（月尽→夜晚→昏暗→隐晦→走夜路/不顺利）</p>
+                            <p>3. 小组代表展示并说明引申逻辑</p>
+                            <p>4. 对比理解两种引申方式差异——<span class="key-text">"韬"的多向并发 vs "晦"的线性传递</span></p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>学生主体建构知识，通过具身绘制图谱掌握辐射式与链条式引申规律，发展系统思维
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">9</span>
+        </div>
+    </div>
+
+    <!-- 第八页：教学安排（下） -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header" style="margin-top: 0;">
+            <div class="section-num">六</div>
+            <h2 class="section-title">教学安排（续）</h2>
+        </div>
+        <div class="lesson-plan-container">
+            <!-- 验证辨析 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">验证辨析</span>
+                    <span class="lesson-plan-time">6分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>AI太炎历时语料库验证，西方阴谋论辨析与文化反思</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. <span class="key-text">AI太炎验证：</span>引入古汉语历时词义语料库（AI太炎）统计分析，展示"韬"常配"光"表收敛，"晦"表隐晦内敛，数据证明均无<span class="keyword">"阴谋潜伏"</span>之意</p>
+                            <p>2. <span class="key-text">阴谋论辨析：</span>揭示西方媒体译法（conceal one's talent）的阴谋论色彩，指出"韬"的"剑衣"本义蕴含<span class="keyword">"保护性隐藏"</span>而非"阴谋性隐藏"</p>
+                            <p>3. <span class="key-text">历史反思：</span>强调"很可惜我们直到20年后才注意到这种误译"，强调文化准确传播的重要性</p>
+                            <p>4. 回到国策：明确<span class="key-text">"韬光养晦"</span>准确内涵——低调行事、积蓄力量、等待时机的处世智慧</p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. 观察AI太炎语料库中"韬""晦"的用法统计，验证"收敛光芒"与"阴谋潜伏"的语义差异</p>
+                            <p>2. 对比西方译法与中文原意，反思翻译偏差背后的文化误读</p>
+                            <p>3. 明确<span class="key-text">"韬光养晦"为守正蓄势的积极战略</span>，而非阴谋算计</p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>技术应用（AI语料库）增强学术严谨性；通过"20年后才注意到"的历史遗憾，培育家国情怀与跨文化传播意识
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 学以致用 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">学以致用</span>
+                    <span class="lesson-plan-time">4分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>"词义侦探"课上即时练习，现代常用词本义与引申分析</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. 任务发布：选择<span class="keyword">"引""习""天""阳"</span>等现代常用词，运用"因形求义"确定本义，梳理引申脉络</p>
+                            <p>2. 实践要求：判断引申方式（辐射式或链条式），分析当今误用情况</p>
+                            <p>3. 巡视指导：提示从具体到抽象的思维路径（如"引"：弓弦→拉→引导→延长→引用）</p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. 选择一字（如"引"），分析字形（弓+丨）得本义<span class="key-text">"开弓"</span></p>
+                            <p>2. 梳理引申链条（开弓→拉→引导→延长→引用）</p>
+                            <p>3. 判断引申方式，思考现代误用</p>
+                            <p>4. 准备1分钟发言展示探究结果</p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>即时迁移应用，巩固"因形求义"方法论；连接古今语言生活，体现"学以致用"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 守正创新 -->
+            <div class="lesson-plan-item">
+                <div class="lesson-plan-header">
+                    <span class="lesson-plan-phase">守正创新</span>
+                    <span class="lesson-plan-time">3分钟</span>
+                </div>
+                <div class="lesson-plan-body">
+                    <div class="lesson-plan-box left-box">
+                        <div class="lesson-plan-box-title">📖 教学内容与教师活动</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>教学内容：</strong>"守正创新"主题总结与课后作业布置</p>
+                            <p><strong>教师活动：</strong></p>
+                            <p>1. <span class="key-text">体系总结：</span>本义如根（守正），引申如枝（创新）；因形求义是方法，准确理解文化精神是目的</p>
+                            <p>2. <span class="key-text">价值升华：</span>"词义在演变中不忘本来（本义），面向未来（新义），正如我们在传承中华文明时既要守住根脉，又要创新发展"</p>
+                            <p>3. <span class="key-text">作业布置：</span>①绘制"引/习/天/阳"完整引申图谱；②撰写《从"韬光养晦"看词义生命力》反思短文</p>
+                        </div>
+                    </div>
+                    <div class="lesson-plan-box right-box">
+                        <div class="lesson-plan-box-title">👥 学生活动与设计意图</div>
+                        <div class="lesson-plan-box-content">
+                            <p><strong>学生活动：</strong></p>
+                            <p>1. 聆听总结，体会<span class="key-text">"本义→引申义"到"守正→创新"</span>的隐喻关联</p>
+                            <p>2. 建立对中华文明<span class="key-text">"与时俱进"</span>语言智慧的认同感</p>
+                            <p>3. 记录课后拓展任务，整理词义探究档案</p>
+                            <div class="design-intent">
+                                <strong>设计意图：</strong>呼应导入环节的外交战略，将词义演变规律升华为"守正创新"的文化精神；通过课后作业实现从课堂到课外、从理论到实践的延伸
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 15px; background: linear-gradient(135deg, #f8f4e8 0%, #fff 100%);">
+            <div class="card-title"><span class="card-icon">⏱️</span>时间分配总览</div>
+            <p class="no-indent" style="text-align: center; font-size: 10pt;">
+                <span class="tag">导入4'</span> + <span class="tag">前测3'</span> + <span class="tag">目标2'</span> + <span class="tag">本义8'</span> + <span class="tag">方法5'</span> + <span class="tag">引申10'</span> + <span class="tag">验证6'</span> + <span class="tag">应用4'</span> + <span class="tag">总结3'</span> = <span class="key-text">45分钟</span>
+            </p>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">10</span>
+        </div>
+    </div>
+
+    <!-- 第九页：教学评价 -->
+    <div class="page">
+        <div class="top-bar"></div>
+        <div class="page-header">
+            <div class="page-header-left">《词的本义与引申义》教学设计</div>
+            <div class="page-header-right">湖南省高校青年教师教学竞赛</div>
+        </div>
+        <div class="section-header">
+            <div class="section-num">七</div>
+            <h2 class="section-title">教学评价</h2>
+        </div>
+        <p>采用<span class="key-text">"目标导向、多维并举"</span>的评价体系，围绕<span class="keyword">"文识、文能、文心"</span>三个维度，结合课前、课中、课后全过程，量化评价与质性评价相结合。</p>
+        <div class="eval-grid">
+            <div class="header">维度</div>
+            <div class="header">评价项目</div>
+            <div class="header">评价标准</div>
+            <div class="header">方式</div>
+            <div class="header">占比</div>
+            <div class="dim">文识</div>
+            <div>课前预习</div>
+            <div class="eval-content">
+                <span class="tag" style="margin-bottom: 5px;">基础</span>
+                <span>完成"韬""晦"本义概念填空；提交字源小测试；记录AI前测体验疑问</span>
+            </div>
+            <div>平台数据</div>
+            <div>10%</div>
+            <div class="dim">文识+文能</div>
+            <div>课堂活动</div>
+            <div class="eval-content">
+                <span class="tag" style="margin-bottom: 5px;">过程</span>
+                <span>本义探究任务参与度；小组合作表现；引申图谱绘制质量</span>
+            </div>
+            <div>教师观察<br>小组互评</div>
+            <div>30%</div>
+            <div class="dim">文能</div>
+            <div>课后作业</div>
+            <div class="eval-content">
+                <span class="tag" style="margin-bottom: 5px;">应用</span>
+                <span>现代汉语常用词引申图谱绘制；本义界定准确；引申逻辑阐释规范</span>
+            </div>
+            <div>作业批改<br>平台评分</div>
+            <div>40%</div>
+            <div class="dim">文心</div>
+            <div>拓展作业</div>
+            <div class="eval-content">
+                <span class="tag tag-secondary" style="margin-bottom: 5px;">创新</span>
+                <span>《从"韬光养晦"看词义生命力》反思短文；体现"守正创新"价值认同</span>
+            </div>
+            <div>教师评分<br>学生互评</div>
+            <div>20%</div>
+        </div>
+        <h3>特色评价设计</h3>
+        <div class="feature-cards" style="grid-template-columns: repeat(3, 1fr); margin: 15px 0;">
+            <div class="feature-card" style="text-align: left; border-top: 4px solid var(--primary);">
+                <div class="feature-title" style="color: var(--primary);">📁 部首文化档案袋</div>
+                <div class="feature-desc">收集字探究记录、AI对话卡、思维导图，形成<span class="key-text">"文化思维可视化"</span>成长档案，关注过程而非结果对错。</div>
+            </div>
+            <div class="feature-card" style="text-align: left; border-top: 4px solid var(--success);">
+                <div class="feature-title" style="color: var(--success);">🤖 AI协同评价</div>
+                <div class="feature-desc">将学生思维导图与AI生成文化图谱进行<span class="key-text">相似度分析</span>，评估对部首文化把握的准确度。</div>
+            </div>
+            <div class="feature-card" style="text-align: left; border-top: 4px solid var(--accent);">
+                <div class="feature-title" style="color: var(--accent);">💡 文化反思评价</div>
+                <div class="feature-desc">在<span class="key-text">"文心"</span>维度，重点评价是否能阐释<span class="keyword">"中华文明的人文精神"</span>，而非单纯评价思维导图美观度。</div>
+            </div>
+        </div>
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--border); text-align: center;">
+            <p style="font-size: 12pt; color: var(--primary); font-weight: bold; margin-bottom: 8px;">《古代汉语》课程教学设计 · 词的本义与引申义</p>
+            <p style="font-size: 10pt; color: var(--text-muted);">本设计基于"下学上达、文以载道、明慧立德"理念编制 | 适用于青教赛文科组</p>
+        </div>
+        <div class="page-footer">
+            <span class="page-number">11</span>
+        </div>
+    </div>
+</body>
+</html>
